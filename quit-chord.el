@@ -91,7 +91,8 @@
 (defun quit-chord:isearch-exit-chord-worker (&optional arg)
   (interactive "p")
   ;; delete the initial `quit-chord-key-1' and accept the search
-  (execute-kbd-macro (kbd "<backspace> <return>")))
+  (isearch-delete-char)
+  (isearch-exit))
 
 (defun quit-chord:isearch-exit-chord (arg)
   (interactive "p")
