@@ -103,7 +103,7 @@
   ;; Manually signal quit because using `keyboard-quit' displays
   ;; "quit" in the echo-area, hiding the search text if you press 'j'
   ;; and another character besides 'k' in rapid succession.
-  (run-at-time quit-chord-delay nil '(lambda () (signal 'quit)))
+  (run-at-time quit-chord-delay nil '(lambda () (signal 'quit nil)))
   (condition-case nil
     (smartrep-read-event-loop
       `((,quit-chord-key-1 . quit-chord:isearch-exit-chord-worker)
