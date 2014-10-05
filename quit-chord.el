@@ -120,7 +120,7 @@
     'quit-chord:isearch-exit-chord)
 
   (define-key isearch-mode-map quit-chord-key-2
-    'quit-chord:isearch-exit-chord-worker)
+    'quit-chord:isearch-exit-chord)
 
   ;; Hack for exiting `y-or-no-p'.  It's impossible to use normal
   ;; keybindings while `y-or-no-p' is executing.  It only responds to
