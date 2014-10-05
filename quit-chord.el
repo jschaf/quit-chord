@@ -88,13 +88,13 @@
 
 ;; Exit isearch by pressing a key-chord, see
 ;; http://stackoverflow.com/questions/20926215
-(defun quit-chord:isearch-exit-chord-worker (&optional arg)
+(defun quit-chord-isearch-exit-chord-worker (&optional arg)
   (interactive "p")
   ;; delete the initial `quit-chord-key-1' and accept the search
   (isearch-delete-char)
   (isearch-exit))
 
-(defun quit-chord:isearch-exit-chord (arg)
+(defun quit-chord-isearch-exit-chord (arg)
   (interactive "p")
   ;; TODO: why do we need this?
   (isearch-printing-char)
@@ -106,8 +106,8 @@
   (run-at-time quit-chord-delay nil '(lambda () (signal 'quit nil)))
   (condition-case nil
     (smartrep-read-event-loop
-      `((,quit-chord-key-1 . quit-chord:isearch-exit-chord-worker)
-        (,quit-chord-key-2 . quit-chord:isearch-exit-chord-worker)))
+      `((,quit-chord-key-1 . quit-chord-isearch-exit-chord-worker)
+        (,quit-chord-key-2 . quit-chord-isearch-exit-chord-worker)))
     (quit nil)))
 
 (defun quit-chord--init ()
@@ -117,10 +117,10 @@
                            'quit-chord)
 
   (define-key isearch-mode-map quit-chord-key-1
-    'quit-chord:isearch-exit-chord)
+    'quit-chord-isearch-exit-chord)
 
   (define-key isearch-mode-map quit-chord-key-2
-    'quit-chord:isearch-exit-chord)
+    'quit-chord-isearch-exit-chord)
 
   ;; Hack for exiting `y-or-no-p'.  It's impossible to use normal
   ;; keybindings while `y-or-no-p' is executing.  It only responds to
