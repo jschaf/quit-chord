@@ -135,7 +135,6 @@
   ;; (define-key query-replace-map quit-chord-key-2 'quit)
   )
 
-
 ;;;###autoload
 (define-minor-mode quit-chord-mode
   "Toggle quit-chord mode."
