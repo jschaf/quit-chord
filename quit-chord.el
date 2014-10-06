@@ -88,14 +88,16 @@
 
 ;; Exit isearch by pressing a key-chord, see
 ;; http://stackoverflow.com/questions/20926215
-(defun quit-chord-isearch-exit-chord-worker (&optional arg)
-  (interactive "p")
+(defun quit-chord-isearch-exit-chord-worker ()
+  "Exit isearch mode when completing the quit key-chord."
+  (interactive)
   ;; delete the initial `quit-chord-key-1' and accept the search
   (isearch-delete-char)
   (isearch-exit))
 
-(defun quit-chord-isearch-exit-chord (arg)
-  (interactive "p")
+(defun quit-chord-isearch-exit-chord ()
+  "Trigger event-loop to catch second quit-chord keypress."
+  (interactive)
   ;; TODO: why do we need this?
   (isearch-printing-char)
   (eval-when-compile
