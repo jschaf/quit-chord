@@ -129,7 +129,11 @@
   ;; a specific set of commands which are listed in the `y-or-no-p'
   ;; doc string.  So, we'll just bind the second keypress of our quit
   ;; key-chord to 'quit
-  (define-key query-replace-map quit-chord-key-2 'quit))
+
+  ;; This also applies to isearch, so disable until I figure out a
+  ;; workaround
+  ;; (define-key query-replace-map quit-chord-key-2 'quit)
+  )
 
 
 ;;;###autoload
