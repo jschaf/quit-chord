@@ -96,7 +96,7 @@
   (isearch-exit))
 
 (defun quit-chord-isearch-exit-chord ()
-  "Trigger event-loop to catch second quit-chord keypress."
+  "Trigger event-loop to catch second `quit-chord' keypress."
   (interactive)
   ;; TODO: why do we need this?
   (isearch-printing-char)
@@ -113,7 +113,7 @@
     (quit nil)))
 
 (defun quit-chord--init ()
-  "Initialize the keymaps for quit-chord."
+  "Initialize the keymaps for `quit-chord'."
 
   (key-chord-define-global (kbd (concat quit-chord-key-1 quit-chord-key-2))
                            'quit-chord)
@@ -147,7 +147,7 @@
 
 ;;;###autoload
 (defun turn-on-quit-chord-mode ()
-  "Turn on `quit-chord-mode'."
+  "Turn on function `quit-chord-mode'."
   (interactive)
   (quit-chord-mode 1))
 
