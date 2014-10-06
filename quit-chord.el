@@ -22,7 +22,7 @@
 
 ;;; Commentary:
 
-;; Quit all diaglogs in Emacs with the same keychord.
+;; Quit all diaglogs in Emacs with the same key-chord.
 ;;
 ;; See documentation on https://github.com/jschaf/quit-chord
 
@@ -55,12 +55,12 @@
   :group 'quit-chord)
 
 (defcustom quit-chord-enabled-hook nil
-  "Called after `quit-chord-mode' is turned on."
+  "Called after function `quit-chord-mode' is turned on."
   :type 'hook
   :group 'quit-chord)
 
 (defcustom quit-chord-disabled-hook nil
-  "Called after `quit-chord-mode' is turned off."
+  "Called after function `quit-chord-mode' is turned off."
   :type 'hook
   :group 'quit-chord)
 
