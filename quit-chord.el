@@ -98,9 +98,9 @@
 (defun quit-chord-isearch-exit-chord ()
   "Trigger event-loop to catch second `quit-chord' keypress."
   (interactive)
-  ;; Add the last keypress, i.e. `last-command-event' to the isearch string.  We need this in
-  ;; case we're simply searching for a string that contains
-  ;; `quit-chord-key-1'.
+  ;; Add the last keypress, i.e. `last-command-event' to the isearch
+  ;; string.  We need this in case we're simply searching for a string
+  ;; that contains `quit-chord-key-1'.
   (isearch-printing-char)
   (eval-when-compile
     (require 'smartrep))
