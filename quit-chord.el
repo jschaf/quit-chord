@@ -145,7 +145,8 @@
   :group 'quit-chord
   (if quit-chord-mode
       (progn
-        (key-chord-mode 1)
+        (unless key-chord-mode
+          (key-chord-mode 1))
         (quit-chord--init)
         (run-hooks 'quit-chord-enabled-hook))
     (run-hooks 'quit-chord-disabled-hook)))
